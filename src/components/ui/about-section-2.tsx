@@ -58,7 +58,7 @@ export default function AboutSection2() {
                             >
                                 rethinking
                             </TimelineContent>{" "}
-                            vehicle charging to be more reliable and always you-first. Our
+                            creative marketing to be more disruptive and always vision-first. Our
                             goal is to continually raise the bar and{" "}
                             <TimelineContent
                                 as="span"
@@ -69,7 +69,7 @@ export default function AboutSection2() {
                             >
                                 challenge
                             </TimelineContent>{" "}
-                            how things could{" "}
+                            how your brand could{" "}
                             <TimelineContent
                                 as="span"
                                 animationNum={3}
@@ -77,7 +77,7 @@ export default function AboutSection2() {
                                 customVariants={textVariants}
                                 className="text-white border border-white/20 inline-flex items-center h-10 md:h-16 border-dotted px-2 rounded-md bg-white/5 backdrop-blur-sm -my-1"
                             >
-                                work for you.
+                                scale with you.
                             </TimelineContent>
                         </TimelineContent>
 
@@ -90,7 +90,7 @@ export default function AboutSection2() {
                                 className="mb-4 sm:text-xl text-lg"
                             >
                                 <div className=" font-normal text-white/50 mb-0.5 capitalize">
-                                    We are Electra and we will
+                                    We are UPPEARANCE and we will
                                 </div>
                                 <div className=" text-white/80 font-medium uppercase tracking-widest text-xs">
                                     take you further
@@ -105,7 +105,7 @@ export default function AboutSection2() {
                                 className="bg-white/10 hover:bg-white/20 border border-white/20 text-white h-12 px-6 rounded-full text-base inline-flex items-center cursor-pointer transition-colors backdrop-blur-sm"
                             >
                                 <Zap fill="currentColor" size={12} className="mr-1.5" />
-                                About Electra
+                                About UPPEARANCE
                             </TimelineContent>
                         </div>
                     </div>
