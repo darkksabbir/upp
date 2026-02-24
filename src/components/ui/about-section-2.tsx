@@ -102,10 +102,11 @@ export default function AboutSection2() {
                                 animationNum={5}
                                 timelineRef={heroRef}
                                 customVariants={textVariants}
-                                className="bg-white/10 hover:bg-white/20 border border-white/20 text-white h-12 px-6 rounded-full text-base inline-flex items-center cursor-pointer transition-colors backdrop-blur-sm"
+                                className="bg-white/10 hover:bg-white/20 border border-white/20 text-white h-12 px-6 rounded-full text-base inline-flex items-center cursor-pointer transition-colors backdrop-blur-sm whitespace-nowrap"
                             >
-                                <Zap fill="currentColor" size={12} className="mr-1.5" />
-                                About UPPEARANCE
+                                <Zap fill="currentColor" size={12} className="mr-1.5 shrink-0" />
+                                <span className="hidden sm:inline">About UPPEARANCE</span>
+                                <span className="sm:hidden">About Upp</span>
                             </TimelineContent>
                         </div>
                     </div>
