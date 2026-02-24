@@ -7,15 +7,22 @@ export default function Home() {
     <div className="flex w-full flex-col bg-black">
       {/* Hero and Logos Section with Background */}
       <div className="relative flex min-h-screen w-full flex-col overflow-hidden" >
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 z-0 h-full w-full object-cover"
-        >
-          <source src="/hero-video-new.mp4" type="video/mp4" />
-        </video>
+        <div
+          className="absolute inset-0 z-0 h-full w-full"
+          dangerouslySetInnerHTML={{
+            __html: `
+              <video 
+                autoplay 
+                loop 
+                muted 
+                playsinline 
+                class="object-cover h-full w-full"
+              >
+                <source src="/hero-video-new.mp4" type="video/mp4" />
+              </video>
+            `
+          }}
+        />
 
         <div className="relative z-10 flex w-full flex-col grow">
           <Header />
