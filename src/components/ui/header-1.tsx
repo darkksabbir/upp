@@ -39,22 +39,22 @@ export function Header() {
     return (
         <header
             className={cn('sticky top-0 z-50 w-full border-b border-transparent', {
-                'bg-background/95 supports-[backdrop-filter]:bg-background/50 border-border backdrop-blur-lg':
+                'bg-black/95 supports-[backdrop-filter]:bg-black/50 border-white/10 backdrop-blur-lg':
                     scrolled,
             })}
         >
             <nav className="mx-auto flex h-14 w-full max-w-5xl items-center justify-between px-4">
-                <div className="hover:bg-accent rounded-md p-2">
-                    <WordmarkIcon className="h-4" />
+                <div className="rounded-md p-2">
+                    <img src="/new-logo.png" alt="Logo" className="h-8 object-contain" />
                 </div>
                 <div className="hidden items-center gap-2 md:flex">
                     {links.map((link) => (
-                        <a key={link.label} className={buttonVariants({ variant: 'ghost' })} href={link.href}>
+                        <a key={link.label} className={cn(buttonVariants({ variant: 'ghost' }), "text-white/70 hover:text-white hover:bg-white/10")} href={link.href}>
                             {link.label}
                         </a>
                     ))}
-                    <Button variant="outline">Sign In</Button>
-                    <Button>Get Started</Button>
+                    <Button variant="outline" className="border-white/20 text-white hover:bg-white/10">Sign In</Button>
+                    <Button className="bg-white text-black hover:bg-white/90">Get Started</Button>
                 </div>
                 <Button
                     size="icon"

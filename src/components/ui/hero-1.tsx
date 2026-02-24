@@ -7,20 +7,15 @@ export function HeroSection() {
     return (
         <section className="mx-auto w-full max-w-5xl">
             {/* Top Shades */}
-            <div
-                aria-hidden="true"
-                className="absolute inset-0 isolate hidden overflow-hidden contain-strict lg:block"
-            >
-                <div className="absolute inset-0 -top-14 isolate -z-10 bg-[radial-gradient(35%_80%_at_49%_0%,--theme(--color-foreground/.08),transparent)] contain-strict" />
-            </div>
+            {/* top radial gradient removed as requested */}
 
             {/* X Bold Faded Borders */}
             <div
                 aria-hidden="true"
                 className="absolute inset-0 mx-auto hidden min-h-screen w-full max-w-5xl lg:block"
             >
-                <div className="mask-y-from-80% mask-y-to-100% absolute inset-y-0 left-0 z-10 h-full w-px bg-foreground/15" />
-                <div className="mask-y-from-80% mask-y-to-100% absolute inset-y-0 right-0 z-10 h-full w-px bg-foreground/15" />
+                <div className="mask-y-from-80% mask-y-to-100% absolute inset-y-0 left-0 z-10 h-full w-px bg-white/40" />
+                <div className="mask-y-from-80% mask-y-to-100% absolute inset-y-0 right-0 z-10 h-full w-px bg-white/40" />
             </div>
 
             {/* main content */}
@@ -31,36 +26,35 @@ export function HeroSection() {
                     aria-hidden="true"
                     className="absolute inset-0 -z-1 size-full overflow-hidden"
                 >
-                    <div className="absolute inset-y-0 left-4 w-px bg-linear-to-b from-transparent via-border to-border md:left-8" />
-                    <div className="absolute inset-y-0 right-4 w-px bg-linear-to-b from-transparent via-border to-border md:right-8" />
-                    <div className="absolute inset-y-0 left-8 w-px bg-linear-to-b from-transparent via-border/50 to-border/50 md:left-12" />
-                    <div className="absolute inset-y-0 right-8 w-px bg-linear-to-b from-transparent via-border/50 to-border/50 md:right-12" />
+                    <div className="absolute inset-y-0 left-4 w-px bg-linear-to-b from-transparent via-white/40 to-white/40 md:left-8" />
+                    <div className="absolute inset-y-0 right-4 w-px bg-linear-to-b from-transparent via-white/40 to-white/40 md:right-8" />
+                    <div className="absolute inset-y-0 left-8 w-px bg-linear-to-b from-transparent via-white/20 to-white/20 md:left-12" />
+                    <div className="absolute inset-y-0 right-8 w-px bg-linear-to-b from-transparent via-white/20 to-white/20 md:right-12" />
                 </div>
 
                 <a
                     className={cn(
-                        "group mx-auto flex w-fit items-center gap-3 rounded-full border bg-card px-3 py-1 shadow",
+                        "group mx-auto flex w-fit items-center gap-3 rounded-full border border-white/10 bg-white/5 px-3 py-1 backdrop-blur-sm",
                         "fade-in slide-in-from-bottom-10 animate-in fill-mode-backwards transition-all delay-500 duration-500 ease-out"
                     )}
                     href="#link"
                 >
-                    <RocketIcon className="size-3 text-muted-foreground" />
-                    <span className="text-xs">shipped new features!</span>
-                    <span className="block h-5 border-l" />
+                    <RocketIcon className="size-3 text-white/60" />
+                    <span className="text-xs text-white/90">shipped new features!</span>
+                    <span className="block h-5 border-l border-white/10" />
 
                     <ArrowRightIcon className="size-3 duration-150 ease-out group-hover:translate-x-1" />
                 </a>
 
                 <h1
                     className={cn(
-                        "fade-in slide-in-from-bottom-10 animate-in text-balance fill-mode-backwards text-center text-4xl tracking-tight delay-100 duration-500 ease-out md:text-5xl lg:text-6xl",
-                        "text-shadow-[0_0px_50px_theme(--color-foreground/.2)]"
+                        "fade-in slide-in-from-bottom-10 animate-in text-balance fill-mode-backwards text-center text-4xl tracking-tight delay-100 duration-500 ease-out md:text-5xl lg:text-6xl"
                     )}
                 >
                     Building Teams Help <br /> You Scale and Lead
                 </h1>
 
-                <p className="fade-in slide-in-from-bottom-10 mx-auto max-w-md animate-in fill-mode-backwards text-center text-base text-foreground/80 tracking-wider delay-200 duration-500 ease-out sm:text-lg md:text-xl">
+                <p className="fade-in slide-in-from-bottom-10 mx-auto max-w-md animate-in fill-mode-backwards text-center text-base text-white/70 tracking-wider delay-200 duration-500 ease-out sm:text-lg md:text-xl">
                     Connecting you with world-class talent <br /> to scale, innovate and
                     lead
                 </p>
@@ -84,8 +78,8 @@ export function HeroSection() {
 export function LogosSection() {
     return (
         <section className="relative space-y-4 border-t pt-6 pb-10">
-            <h2 className="text-center font-medium text-lg text-muted-foreground tracking-tight md:text-xl">
-                Trusted by <span className="text-foreground">experts</span>
+            <h2 className="text-center font-medium text-lg text-white/60 tracking-tight md:text-xl">
+                Trusted by <span className="text-white">experts</span>
             </h2>
             <div className="relative z-10 mx-auto max-w-4xl">
                 <LogoCloud logos={logos} />
