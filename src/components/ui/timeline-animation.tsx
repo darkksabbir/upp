@@ -25,7 +25,7 @@ export const TimelineContent: React.FC<TimelineContentProps> = ({
 }) => {
     const isInView = useInView(timelineRef, { once: true, margin: "-10% 0px" });
 
-    const MotionComponent = motion[Component as keyof typeof motion] || motion.div;
+    const MotionComponent = (motion as any)[Component] || motion.div;
 
     const defaultVariants = {
         hidden: { opacity: 0, y: 20 },
