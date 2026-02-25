@@ -1,6 +1,7 @@
 import { HeroSection, LogosSection } from "@/components/ui/hero-1";
 import { Header } from "@/components/ui/header-1";
 import AboutSection2 from "@/components/ui/about-section-2";
+import { Footer } from "@/components/ui/footer-section";
 
 export default function Home() {
   return (
@@ -37,6 +38,9 @@ export default function Home() {
       <div className="bg-black relative z-20">
         <AboutSection2 />
       </div>
+
+      {/* Footer Section */}
+      <Footer />
     </div>
   );
 }
