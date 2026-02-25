@@ -1,6 +1,6 @@
 "use client";
 import { useRef } from "react";
-import { TimelineContent } from "@/components/ui/timeline-animation";
+import { motion, useInView } from "framer-motion";
 import {
     PenToolIcon,
     BarChart2Icon,
@@ -49,62 +49,84 @@ const services = [
     },
 ];
 
+const containerVariants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.08,
+        },
+    },
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 32, filter: "blur(8px)" },
+    visible: {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        transition: { duration: 0.6, ease: "easeOut" as const },
+    },
+};
+
+const headingVariants = {
+    hidden: { opacity: 0, y: 20, filter: "blur(6px)" },
+    visible: {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        transition: { duration: 0.7, ease: "easeOut" as const },
+    },
+};
+
 export default function ServicesSection() {
     const sectionRef = useRef<HTMLDivElement>(null);
-
-    const revealVariants = {
-        visible: (i: number) => ({
-            y: 0,
-            opacity: 1,
-            filter: "blur(0px)",
-            transition: { delay: i * 0.08, duration: 0.6 },
-        }),
-        hidden: { filter: "blur(8px)", y: 30, opacity: 0 },
-    };
+    const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
 
     return (
         <section className="py-20 px-4 bg-black relative overflow-hidden" ref={sectionRef}>
             {/* subtle grid bg */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:48px_48px]" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:48px_48px] pointer-events-none" />
 
             <div className="max-w-6xl mx-auto relative z-10">
-                <TimelineContent
-                    as="h2"
-                    animationNum={0}
-                    timelineRef={sectionRef}
-                    customVariants={revealVariants}
+                <motion.h2
+                    variants={headingVariants}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
                     className="text-center text-3xl sm:text-4xl md:text-5xl font-semibold text-white mb-4"
                 >
                     What We Do
-                </TimelineContent>
-                <TimelineContent
-                    as="p"
-                    animationNum={1}
-                    timelineRef={sectionRef}
-                    customVariants={revealVariants}
+                </motion.h2>
+                <motion.p
+                    variants={headingVariants}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                    transition={{ delay: 0.12, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                     className="text-center text-white/50 text-base sm:text-lg max-w-xl mx-auto mb-16"
                 >
                     Every service we offer is built to move metrics that matter — attention, trust, and revenue.
-                </TimelineContent>
+                </motion.p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {services.map((service, i) => (
-                        <TimelineContent
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+                >
+                    {services.map((service) => (
+                        <motion.div
                             key={service.title}
-                            as="div"
-                            animationNum={i + 2}
-                            timelineRef={sectionRef}
-                            customVariants={revealVariants}
-                            className="group rounded-xl border border-white/10 bg-white/5 p-6 hover:bg-white/8 hover:border-white/20 transition-all duration-300 backdrop-blur-sm"
+                            variants={itemVariants}
+                            className="group rounded-xl border border-white/10 bg-white/5 p-6 hover:bg-white/8 hover:border-white/20 transition-colors duration-300 backdrop-blur-sm cursor-default"
+                            whileHover={{ y: -4, transition: { duration: 0.2 } }}
                         >
                             <div className="mb-4 inline-flex items-center justify-center w-11 h-11 rounded-lg bg-white/10 group-hover:bg-white/15 transition-colors">
                                 <service.icon className="size-5 text-white" />
                             </div>
                             <h3 className="text-white font-semibold text-lg mb-2">{service.title}</h3>
                             <p className="text-white/50 text-sm leading-relaxed">{service.description}</p>
-                        </TimelineContent>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );
