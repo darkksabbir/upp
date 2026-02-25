@@ -3,6 +3,11 @@ import { Header } from "@/components/ui/header-1";
 import AboutSection2 from "@/components/ui/about-section-2";
 import { Footer } from "@/components/ui/footer-section";
 import { TestimonialsSection } from "@/components/ui/testimonials-with-marquee";
+import ServicesSection from "@/components/ui/services-section";
+import StatsSection from "@/components/ui/stats-section";
+import ProcessSection from "@/components/ui/process-section";
+import WorkSection from "@/components/ui/work-section";
+import CtaSection from "@/components/ui/cta-section";
 
 const testimonials = [
   {
@@ -62,10 +67,22 @@ export default function Home() {
         </div>
       </div>
 
-      {/* About Section (No Background) */}
+      {/* About Section */}
       <div className="bg-black relative z-20">
         <AboutSection2 />
       </div>
+
+      {/* Stats Section */}
+      <StatsSection />
+
+      {/* Services Section */}
+      <ServicesSection />
+
+      {/* How We Work Section */}
+      <ProcessSection />
+
+      {/* Selected Work Section */}
+      <WorkSection />
 
       {/* Testimonials Section */}
       <TestimonialsSection
@@ -73,6 +90,9 @@ export default function Home() {
         description="We help the world's most ambitious brands scale their reach through disruptive creative marketing."
         testimonials={testimonials}
       />
+
+      {/* CTA Section */}
+      <CtaSection />
 
       {/* Footer Section */}
       <Footer />
