@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
+@theme {
+  --animate-marquee: marquee var(--duration) linear infinite;
+  --max-width-container: 1280px;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+}
+
 :root {
   --background: #000000;
   --foreground: #ffffff;

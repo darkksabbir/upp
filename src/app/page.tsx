@@ -2,6 +2,34 @@ import { HeroSection, LogosSection } from "@/components/ui/hero-1";
 import { Header } from "@/components/ui/header-1";
 import AboutSection2 from "@/components/ui/about-section-2";
 import { Footer } from "@/components/ui/footer-section";
+import { TestimonialsSection } from "@/components/ui/testimonials-with-marquee";
+
+const testimonials = [
+  {
+    author: {
+      name: "Sarah Chen",
+      handle: "CMO at Visionary Flows",
+      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
+    },
+    text: "UPPEARANCE didn't just redesign our brand; they completely re-engineered our digital presence. Their disruptive approach actually works.",
+  },
+  {
+    author: {
+      name: "Marcus Thorne",
+      handle: "Founder of AeroTech",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+    },
+    text: "Finding an agency that understands both the creative vision and the scaling metrics is rare. UPPEARANCE is that hybrid partner we needed.",
+  },
+  {
+    author: {
+      name: "Elena Rodriguez",
+      handle: "Brand Manager at Pulse Interactive",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
+    },
+    text: "The speed at which they deliver high-performance creative is unparalleled. They challenge the status quo and it shows in our growth metrics.",
+  }
+];
 
 export default function Home() {
   return (
@@ -38,6 +66,13 @@ export default function Home() {
       <div className="bg-black relative z-20">
         <AboutSection2 />
       </div>
+
+      {/* Testimonials Section */}
+      <TestimonialsSection
+        title="Trusted by visionaries"
+        description="We help the world's most ambitious brands scale their reach through disruptive creative marketing."
+        testimonials={testimonials}
+      />
 
       {/* Footer Section */}
       <Footer />
